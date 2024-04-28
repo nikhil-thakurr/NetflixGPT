@@ -7,11 +7,12 @@ import { useEffect } from "react";
 import { addUser, removeUser } from "./utils/userSlice";
 import {useDispatch} from "react-redux"
 import { NETFLIX_LOGO, PROFILE_LOGO } from "./utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const dispatch=useDispatch();
-
-  const user = useSelector((store) => store.user);
+ const dispatch=useDispatch();
+ const navigate = useNavigate();
+ const user = useSelector((store) => store.user);
 
 
   useEffect(() => {
@@ -20,11 +21,13 @@ const Header = () => {
 
         const {uid,email,displayName,photoURL} = user;
         dispatch(addUser({uid,email,displayName,photoURL}));
+        navigate("/browse");
         
         // ...
       } else {
         // User is signed out
         dispatch(removeUser());
+        navigate("/");
       }
     });
 
