@@ -15,7 +15,7 @@ const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const gptView = useSelector((store) => store.gpt.gptView);
-   console.log(showGptView);
+  //  console.log(showGptView);
 
   const showGptSearch = () => {
     dispatch(showGptView());
