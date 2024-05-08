@@ -24,7 +24,7 @@ const GptSearchBar = () => {
 
     const handlegptsearchbtn =async()=>{
 
-        const gptQuery = "Act as a movie recommendation system and suggest movies for this "+  searchtext.current.value + "Give me only 5 movies seperated by comma Like this sholay,lagan,PK,idiots"
+        const gptQuery = "Act as a movie recommendation system and suggest movies for this "+  searchtext.current.value + "Give me only 5 movies seperated by comma Like this sholay,lagan,PK,idiots and dont give it in numbering"
 
         const gptResults = await openai.chat.completions.create({
             messages: [{ role: 'user', content: gptQuery }],
