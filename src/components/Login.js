@@ -69,7 +69,7 @@ const Login = () => {
       <Header />
       <div>
         <img
-          className="absolute "
+          className="absolute h-screen object-cover"
           src={NETFLIX_IMG}
           alt="Netflix-Image"
         />
@@ -77,7 +77,7 @@ const Login = () => {
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-3/12 p-12 bg-black m-auto right-0 left-0 my-32 flex flex-col text-white bg-opacity-80 "
+        className="absolute w-full md:w-3/12 p-12 bg-black m-auto right-0 left-0 my-20 md:my-32 flex flex-col text-white bg-opacity-80 "
       >
         {!handleToggle ? (
           <h1 className="text-3xl py-4">Sign In</h1>

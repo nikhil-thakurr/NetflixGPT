@@ -48,21 +48,21 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-44 px-6 py-2 " src={NETFLIX_LOGO} alt="Netflix" />
+    <div className="absolute w-screen bg-gradient-to-b from-black z-10 flex flex-col md:flex-row  justify-between ">
+      <img className="w-44 px-6 py-2 mx-[27%] md:mx-2" src={NETFLIX_LOGO} alt="Netflix" />
 
       {user && (
-        <div className="flex items-center p-4 ">
+        <div className="flex items-center px-20 md:p-4 ">
           <button
-            className="bg-red-700 mx-2 p-1 rounded-lg text-white"
+            className="bg-red-700 mx-2 p-2  rounded-lg text-white"
             onClick={showGptSearch}
           >
-            { (gptView) ? "Home Page" : "AI Search"}
+            { (gptView) ? "HomePage" : "AISearch"}
           </button>
-          <img className="w-10" src={PROFILE_LOGO} alt="" />
+          <img className="w-10  rounded-md" src={PROFILE_LOGO} alt="" />
 
           <p onClick={handleSignOut} className="text-white cursor-pointer ml-4">
-            Sign Out
+            <button className="bg-purple-500 p-2 rounded-lg">SignOut</button>
           </p>
         </div>
       )}
